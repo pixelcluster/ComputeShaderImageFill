@@ -77,6 +77,7 @@ int main()
 	shaderSource = readFile("./fill-compute.glsl", shaderFileSize);
 
 	glShaderSource(computeShader, 1, &shaderSource, &shaderFileSize);
+	glCompileShader(computeShader);
 	delete[] shaderSource;
 
 	glAttachShader(computeProgram, computeShader);
